@@ -7,12 +7,15 @@ import {ProfileService} from '../profile.service'
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
+  
+  profile:any[];
 
-  constructor(private profserv:ProfileService) { 
-    this.profserv.getProfile();
+  constructor (private profserv:ProfileService) { 
+    this.profile=this.profile;
   }
 
-  ngOnInit(): void {
+  ngOnInit(){
+    this.profserv.getProfile();
   }
 
 }
