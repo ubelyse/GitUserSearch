@@ -6,5 +6,14 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ProfileService {
 
-  constructor() { }
+  private username:string
+
+  constructor(private http:HttpClient) {
+    console.log("service is now")
+    this.username='ubelyse'
+  }
+
+  getProfile(){
+    this.http.get("https://api.github.com/users/"+ this.username)
+  }
 }
