@@ -25,10 +25,7 @@ export class ProfileService {
       location:string;
       followers:number;
       following:number;
-      public_repos:number;
-      
-      
-     
+      repo:number;
     }
 
     let promise =new Promise((resolve,reject)=>{
@@ -38,7 +35,7 @@ export class ProfileService {
           this.userclass.location=response.location
           this.userclass.followers=response.followers
           this.userclass.following=response.following
-          this.userclass.repository=response.public_repos
+          this.userclass.repo=response.repo
          
         
           resolve()
@@ -73,18 +70,10 @@ repositoryrequest(userInput){
           console.log(i)
           this.repo.push(new Repo(response[i].name,response[i].description))
         }
-        
-        // this.repository.description=response.description
-      //  for(let counter in response){
-      //    this.all.push(response[counter])
-      //  }
-      // console.log(this.repository)
         resolve()
     },
     error=>{
-            // this.repository.name="Sorry the repository can not be found!"
-            // this.repository.description="??????????????????????"
-
+          
             reject(error)
         }
     )

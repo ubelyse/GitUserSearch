@@ -2,13 +2,13 @@
     <div class="form-group">
         <label for="name"><h4><u>Enter the Github Username Here</u></h4></label>
         <input type="text" name="ghun" placeholder="Enter Github Username" [(ngModel)]="userName">
-        <button type="submit" class="btn btn-success" (click)="submitUser()">Search</button>
+        <button type="submit" class="btn btn-success" (click)="SearchName()">Search</button>
     </div>
 
     <blockquote class="text-center text-lg">
         <ul>
             <li appHighlight><br>
-                <p><strong>{{userclass.name}}</strong></p>
+                <p><strong>{{userclass.username}}</strong></p>
                 
                 <br><br>
                 <footer>
@@ -18,12 +18,12 @@
                                 <h4><u>Location:</u>{{userclass.location}} </h4><br><br>
                                 <h4><u>Followers:</u>{{userclass.followers}}</h4><br><br>
                                 <h4><u>Following:</u>{{userclass.following}}</h4><br><br>
-                                <h4><u>Repository</u>:{{userclass.repo}}</h4><br><br>
+                                <h4><u>Repository:</u>{{userclass.repo}}</h4><br><br>
                             </div>
                             
                             <div class="col-md-6">
                                 <ul>
-                                    <li *ngFor="let repo of repository">{{repo.name}} <br>{{repo.description}} <br><br></li>
+                                    <li *ngFor="let repo of Repository">{{repo.name}} <br>{{repo.description}} <br><br></li>
                                 </ul>
                             </div>
                         </div>

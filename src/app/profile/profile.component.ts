@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {ProfileService} from '../profile.service';
 import {Userclass} from '../userclass'
+import { Repo } from '../repo';
+
 
 @Component({
   selector: 'app-profile',
@@ -9,14 +11,25 @@ import {Userclass} from '../userclass'
 })
 export class ProfileComponent implements OnInit {
   
-  userclass:Userclass[];
+  userclass:Userclass;
+  repo:Repo[];
 
-  constructor (private profserv:ProfileService) { 
-    this.userclass=this.userclass;
+  userName=""
+
+  constructor (private profileservice:ProfileService) {}
+  
+  SearchName(){
+    this.profileservice.profileRequest(this.userName)
+    this.profileservice.repositoryrequest(this.userName)
   }
 
   ngOnInit(){
-    this.profserv.profileRequest;
+    this.profileservice.profileRequest('ubelyse');
+    this.profileservice.repositoryrequest('hello')
+         
+    this.userclass=this.profileservice.userclass
+    this.repo=this.profileservice.repo
+    console.log(this.repo)
   }
 
 }
