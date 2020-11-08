@@ -9,6 +9,7 @@ import { Repo } from '../repo';
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.css']
 })
+
 export class ProfileComponent implements OnInit {
   
   userclass:Userclass;
@@ -25,7 +26,7 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit(){
     this.profileservice.profileRequest('ubelyse');
-    this.profileservice.repositoryrequest('hello')
+    this.profileservice.repositoryrequest('helloworld')
          
     this.userclass=this.profileservice.userclass
     this.repo=this.profileservice.repo
