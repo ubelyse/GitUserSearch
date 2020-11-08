@@ -16,19 +16,13 @@
                 <footer>
                     <div class="row">
                         <div class="col-md-6">
-                            <h4><u>Location:</u>{{userclass.location}} </h4><br><br>
+                            <br>
                             <h4><u>Followers:</u>{{userclass.followers}}</h4><br><br>
                             <h4><u>Following:</u>{{userclass.following}}</h4><br><br>
-                            <h4><u>Repository:</u>{{userclass.repo}}</h4><br><br>
-                        </div>
-
-                        <div class="col-md-6">
-                            <ul>
-                                <li *ngFor='let repos of repo'>
-                                    {{repos.name}}<br>
-                                    {{repos.description}}
-                                </li>
-                            </ul>
+                            <div>
+                                <h4><u>Repository:</u>{{userclass.repo}}</h4><br><br>
+                                <a href="{{userclass.repo_url}}" target="_blank">Click here to see the repositories's details!</a><br><br>
+                            </div>
                         </div>
                     </div>
                 </footer>
