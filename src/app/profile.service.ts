@@ -13,7 +13,7 @@ export class ProfileService {
 
   constructor(private http:HttpClient) {
     
-    this.userclass=new Userclass('','',0,0,0,new Date())
+    this.userclass=new Userclass('','','',0,0,0,new Date())
     this.repo= []
    }
    profileRequest(userInput){
@@ -22,6 +22,7 @@ export class ProfileService {
     
     interface ApiResponse{
       name:string;
+      avatar_url:string;
       location:string;
       followers:number;
       following:number;
@@ -33,6 +34,7 @@ export class ProfileService {
           
           this.userclass.username=response.name
           this.userclass.location=response.location
+          this.userclass.avatar_url=response.avatar_url
           this.userclass.followers=response.followers
           this.userclass.following=response.following
           this.userclass.repo=response.repo
@@ -42,6 +44,7 @@ export class ProfileService {
       },
       error=>{
               this.userclass.username="Sorry the user name can not be found!"
+              this.userclass.avatar_url="??????????????????????"
 
               reject(error)
           }

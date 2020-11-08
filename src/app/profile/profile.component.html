@@ -1,7 +1,8 @@
 <div class="container">
+    <ng-progress></ng-progress>
     <div class="form-group">
         <label for="username">Enter the Github Username</label><br>
-        <input type="text" name="githun" placeholder="Please Enter the Github Username here"><br>
+        <input type="text" name="githun" placeholder="Please Enter the Github Username here"[(ngModel)]="userName"><br>
         <button type="submit" class="btn btn-success" (click)='SearchName()'>Search</button>
     </div>
     
@@ -11,6 +12,7 @@
                 <p><strong>
                     {{userclass.username}}
                 </strong></p>
+                <img src="{{userclass.avatar_url}}">
 
                 <footer>
                     <cite>
@@ -20,6 +22,7 @@
                                 <h4><u>Followers:</u>{{userclass.followers}}</h4><br><br>
                                 <h4><u>Following:</u>{{userclass.following}}</h4><br><br>
                                 <h4><u>Repository:</u>{{userclass.repo}}</h4><br><br>
+                                <a href="{{userclass.html_url}}" target="_blank">Click here to see the repositories's details!</a><br><br>
                             </div>
 
                             <div class="col-md-6">

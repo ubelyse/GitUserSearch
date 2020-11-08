@@ -8,6 +8,7 @@ import {ProfileService} from './profile.service'
 import { HttpClientModule } from '@angular/common/http';
 import { NavbarComponent } from './navbar/navbar/navbar.component';
 import { AboutComponent } from './about/about/about.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { AboutComponent } from './about/about/about.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
   ],
   providers: [ProfileService],
   bootstrap: [AppComponent]
