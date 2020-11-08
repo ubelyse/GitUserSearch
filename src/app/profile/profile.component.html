@@ -1,9 +1,8 @@
 <div class="container">
-    <ng-progress></ng-progress>
     <div class="form-group">
         <label for="username">Enter the Github Username</label><br>
         <input type="text" name="githun" placeholder="Please Enter the Github Username here"[(ngModel)]="userName"><br>
-        <button type="submit" class="btn btn-success" (click)='SearchName()'>Search</button>
+        <button type="submit" class="btn btn-success" (click)="SearchName()">Search User</button>
     </div>
     
     <div class="text-center">
@@ -15,26 +14,23 @@
                 <img src="{{userclass.avatar_url}}">
 
                 <footer>
-                    <cite>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <h4><u>Location:</u>{{userclass.location}} </h4><br><br>
-                                <h4><u>Followers:</u>{{userclass.followers}}</h4><br><br>
-                                <h4><u>Following:</u>{{userclass.following}}</h4><br><br>
-                                <h4><u>Repository:</u>{{userclass.repo}}</h4><br><br>
-                                <a href="{{userclass.html_url}}" target="_blank">Click here to see the repositories's details!</a><br><br>
-                            </div>
-
-                            <div class="col-md-6">
-                                <ul>
-                                    <li *ngFor='let repos of repo'>
-                                        {{repos.name}}<br>
-                                        {{repos.description}}
-                                    </li>
-                                </ul>
-                            </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h4><u>Location:</u>{{userclass.location}} </h4><br><br>
+                            <h4><u>Followers:</u>{{userclass.followers}}</h4><br><br>
+                            <h4><u>Following:</u>{{userclass.following}}</h4><br><br>
+                            <h4><u>Repository:</u>{{userclass.repo}}</h4><br><br>
                         </div>
-                    </cite>
+
+                        <div class="col-md-6">
+                            <ul>
+                                <li *ngFor='let repos of repo'>
+                                    {{repos.name}}<br>
+                                    {{repos.description}}
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </footer>
             </ul>
         </blockquote>

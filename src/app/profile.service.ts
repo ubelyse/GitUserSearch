@@ -18,7 +18,7 @@ export class ProfileService {
    }
    profileRequest(userInput){
   
-    var userName=userInput;
+    var username=userInput;
     
     interface ApiResponse{
       name:string;
@@ -30,7 +30,7 @@ export class ProfileService {
     }
 
     let promise =new Promise((resolve,reject)=>{
-      this.http.get<ApiResponse>('https://api.github.com/ubelyse/' + userName+'?access_token='+ environment.apikey).toPromise().then(response=>{
+      this.http.get<ApiResponse>('https://api.github.com/users/' + username+'?access_token='+ environment.apikey).toPromise().then(response=>{
           
           this.userclass.username=response.name
           this.userclass.location=response.location
