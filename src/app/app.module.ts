@@ -7,12 +7,14 @@ import { ProfileComponent } from './profile/profile.component';
 import {ProfileService} from './profile.service'
 import { HttpClientModule } from '@angular/common/http';
 import { NavbarComponent } from './navbar/navbar/navbar.component';
+import { AboutComponent } from './about/about/about.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProfileComponent,
-    NavbarComponent
+    NavbarComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,

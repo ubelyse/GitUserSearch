@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ProfileService} from '../profile.service';
 import {Userclass} from '../userclass'
 import { Repo } from '../repo';
-
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-profile',
@@ -17,8 +17,8 @@ export class ProfileComponent implements OnInit {
 
   userName=""
 
-  constructor (private profileservice:ProfileService) {}
-  
+  constructor (private profileservice:ProfileService,private router:Router) {}
+
   SearchName(){
     this.profileservice.profileRequest(this.userName)
     this.profileservice.repositoryrequest(this.userName)
