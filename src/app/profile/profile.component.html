@@ -1,7 +1,39 @@
-<div class="container">
+<div class="container text-center">
     <div class="form-group">
         <label for="username">Enter the Github Username</label><br>
-        <input type="text" name="githun" placeholder="Please Enter the Github Username here">
-        <button type="submit" class="btn btn-success"></button>
+        <input type="text" name="githun" placeholder="Please Enter the Github Username here"><br>
+        <button type="submit" class="btn btn-success">Search</button>
+    </div>
+    
+    <div class="text-center">
+        <blockquote>
+            <ul>
+                <p><strong>
+                    {{userclass.username}}
+                </strong></p>
+
+                <footer>
+                    <cite>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h4><u>Location:</u>{{userclass.location}} </h4><br><br>
+                                <h4><u>Followers:</u>{{userclass.followers}}</h4><br><br>
+                                <h4><u>Following:</u>{{userclass.following}}</h4><br><br>
+                                <h4><u>Repository:</u>{{userclass.repo}}</h4><br><br>
+                            </div>
+
+                            <div class="col-md-6">
+                                <ul>
+                                    <li *ngFor='let repos of repo'>
+                                        {{repos.name}}<br>
+                                        {{repos.description}}
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </cite>
+                </footer>
+            </ul>
+        </blockquote>
     </div>
 </div>
