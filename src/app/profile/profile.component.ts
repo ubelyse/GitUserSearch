@@ -26,7 +26,7 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit(){
     this.profileservice.profileRequest('ubelyse');
-    this.profileservice.repositoryrequest('helloworld')
+    this.profileservice.repositoryrequest('ubelyse')
          
     this.userclass=this.profileservice.userclass
     this.repo=this.profileservice.repo
