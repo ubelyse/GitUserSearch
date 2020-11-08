@@ -15,15 +15,21 @@
 
                 <footer>
                     <div class="row">
-                        <div class="col-md-6">
-                            <br>
+                        <div class="col-md-6"><br>
                             <h4><u>Followers:</u>{{userclass.followers}}</h4><br><br>
                             <h4><u>Following:</u>{{userclass.following}}</h4><br><br>
-                            <div>
-                                <h4><u>Repository:</u>{{userclass.repo}}</h4><br><br>
-                                <a href="{{userclass.repo_url}}" target="_blank">Click here to see the repositories's details!</a><br><br>
-                            </div>
+                            <h4><u>Repository:</u>{{userclass.repo}}</h4><br><br>
                         </div>
+                        <table class="table">
+                            <tbody>
+                              <tr *ngFor='let repos of repo'>
+                                <td>
+                                  <a href="{{repos.repo_url}}" target="_blank" >{{repos.name}}</a><br>
+                                    <p class="desc">Description: {{repos.description}}</p><br>
+                                </td>
+                              </tr>
+                              </tbody>
+                          </table>
                     </div>
                 </footer>
             </ul>
