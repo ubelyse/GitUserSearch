@@ -1,7 +1,8 @@
-<div class="container">
+<div class="container text-center">
     <div class="form-group">
+        <br>
         <label for="username">Enter the Github Username</label><br>
-        <input type="text" name="githun" placeholder="Please Enter the Github Username here"[(ngModel)]="userName"><br>
+        <input type="text" name="githun" placeholder="Please Enter the Github Username here"[(ngModel)]="userName"><br><br>
         <button type="submit" class="btn btn-success" (click)="SearchName()">Search User</button>
     </div>
     
@@ -16,20 +17,27 @@
                 <footer>
                     <div class="row">
                         <div class="col-md-6"><br>
-                            <h4><u>Followers:</u>{{userclass.followers}}</h4><br><br>
-                            <h4><u>Following:</u>{{userclass.following}}</h4><br><br>
-                            <h4><u>Number of Repository:</u>{{userclass.repo}}</h4><br><br>
+                            <div class="text-center">
+                                <h4><u>Followers:</u>{{userclass.followers}}</h4><br><br>
+                                <h4><u>Following:</u>{{userclass.following}}</h4><br><br>
+                                <h4><u>Number of Repository:</u>{{userclass.repo}}</h4><br><br>
+                            </div>
+                            
                         </div>
-                        <table class="table">
-                            <tbody>
-                              <tr *ngFor='let repos of repo'>
-                                <td>
-                                  <a href="{{repos.repo_url}}" target="_blank" >{{repos.name}}</a><br>
-                                    <p class="desc">Description: {{repos.description}}</p><br>
-                                </td>
-                              </tr>
-                              </tbody>
-                          </table>
+
+                        <div>
+                            <h4><strong>List of Public Repositories</strong> </h4>
+                            <table class="table">
+                                <tbody>
+                                  <tr *ngFor='let repos of repo'>
+                                    <td>
+                                      <a href="{{repos.repo_url}}" target="_blank" >{{repos.name}}</a><br>
+                                        <p class="desc">Description: {{repos.description}}</p><br>
+                                    </td>
+                                  </tr>
+                                  </tbody>
+                              </table>
+                        </div>
                     </div>
                 </footer>
             </ul>
