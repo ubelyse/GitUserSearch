@@ -1,4 +1,5 @@
 <div class="container text-center">
+    
     <div class="form-group">
         <br>
         <label for="username">Enter the Github Username</label><br>
@@ -21,8 +22,7 @@
                                 <h4><u>Followers:</u>{{userclass.followers}}</h4><br><br>
                                 <h4><u>Following:</u>{{userclass.following}}</h4><br><br>
                                 <h4><u>Number of Repository:</u>{{userclass.repo}}</h4><br><br>
-                            </div>
-                            
+                            </div>    
                         </div>
 
                         <div>
@@ -31,8 +31,8 @@
                                 <tbody>
                                   <tr *ngFor='let repos of repo'>
                                     <td>
-                                      <a href="{{repos.repo_url}}" target="_blank" >{{repos.name}}</a><br>
-                                        <p class="desc">Description: {{repos.description}}</p><br>
+                                      <a href="{{repos.repo_url}}" target="_blank">{{repos.name}}</a><br>
+                                      <p>Description: {{repos.description}}</p><br>
                                     </td>
                                   </tr>
                                   </tbody>
