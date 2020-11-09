@@ -72,7 +72,6 @@ repositoryrequest(userInput){
           console.log(i)
           this.repo.push(new Repo(response[i].name,response[i].description, response[i].created_at))
         }
-
         resolve()
     },
     error=>{

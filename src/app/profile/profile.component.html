@@ -3,7 +3,7 @@
     <div class="gitform form-group text-center">
         <br>
         <label for="username">Enter the Github Username</label><br>
-        <input type="text" name="githun" placeholder="Please Enter the Github name"[(ngModel)]="githubusername"><br><br>
+        <input type="text" name="githun" placeholder="Enter the Github name"[(ngModel)]="githubusername"><br><br>
         <button type="submit" class="btn" (click)="SearchName()">Search User</button><br>
     </div>
     
@@ -13,7 +13,7 @@
                 <br>
                 <div class="lesspart">
                     <div>
-                        <p class="username"><strong>
+                        <p appHighlight class="username"><strong>
                             User name: {{userclass.username}}
                         </strong></p>
                         <img src="{{userclass.avatar_url}}">
@@ -40,7 +40,7 @@
                                       <a href="{{reposi.html_url}}">{{reposi.name}}</a><br>
                                       <p>Description: {{reposi.description}}</p><br>
                                       <p>Date: {{reposi.created_at|date}}</p>
-                                      <p>created in {{reposi.created_at|datecount}} days</p>
+                                      <p>created in {{reposi.created_at|dateCount}} days</p>
                                     </td>
                                   </tr>
                                 </tbody>

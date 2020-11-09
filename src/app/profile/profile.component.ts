@@ -7,7 +7,8 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.css']
+  styleUrls: ['./profile.component.css'],
+  providers:[ProfileService] 
 })
 
 export class ProfileComponent implements OnInit {
@@ -17,7 +18,9 @@ export class ProfileComponent implements OnInit {
 
   githubusername="";
 
-  constructor (private profileservice:ProfileService) {}
+  constructor (private profileservice:ProfileService) {
+    
+  }
 
   SearchName(){
     this.profileservice.profileRequest(this.githubusername)
@@ -25,9 +28,10 @@ export class ProfileComponent implements OnInit {
   }
 
   ngOnInit(){
-    this.profileservice.profileRequest('ubelyse');
-    this.profileservice.repositoryrequest('ubelyse');
-         
+
+    this.profileservice.profileRequest('ubelyse')
+    this.profileservice.repositoryrequest('ubelyse')
+
     this.userclass=this.profileservice.userclass
     this.repo=this.profileservice.repo
     console.log(this.repo)
