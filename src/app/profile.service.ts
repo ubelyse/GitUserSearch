@@ -31,7 +31,7 @@ export class ProfileService {
     }
 
     let promise =new Promise((resolve,reject)=>{
-      this.http.get<ApiResponse>('https://api.github.com/users/' + githubusername+'?access_token='+ environment.apikey).toPromise().then(response=>{
+      this.http.get<ApiResponse>('https://api.github.com/users/' + githubusername+'?access_token='+ environment.miApiKey).toPromise().then(response=>{
           
           this.userclass.username=response.name
           this.userclass.avatar_url=response.avatar_url
@@ -67,7 +67,7 @@ repositoryrequest(userInput){
   }
 
   let promises =new Promise((resolve,reject)=>{
-    this.http.get<ApiRepo>('https://api.github.com/users/'+githubusername+'/repos?access_token='+ environment.apikey).toPromise().then(response=>{
+    this.http.get<ApiRepo>('https://api.github.com/users/'+githubusername+'/repos?access_token='+ environment.miApiKey).toPromise().then(response=>{
         for (var i in response){
           console.log(i)
           this.repo.push(new Repo(response[i].name,response[i].description, response[i].created_at))
