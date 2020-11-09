@@ -55,7 +55,7 @@ No known bugs
 
 
 ## Live link
-this is the live link to my page 
+this is the live link to my page https://ubelyse.github.io/GitUserSearch/
 
 ## Licence
 MIT License
