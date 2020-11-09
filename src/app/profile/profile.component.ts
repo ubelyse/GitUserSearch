@@ -17,7 +17,7 @@ export class ProfileComponent implements OnInit {
 
   githubusername="";
 
-  constructor (private profileservice:ProfileService,private router:Router) {}
+  constructor (private profileservice:ProfileService) {}
 
   SearchName(){
     this.profileservice.profileRequest(this.githubusername)
