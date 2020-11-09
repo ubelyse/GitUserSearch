@@ -1,45 +1,48 @@
-<div class="container text-center">
+<div class="container">
     
-    <div class="gitform form-group">
+    <div class="gitform form-group text-center">
         <br>
         <label for="username">Enter the Github Username</label><br>
         <input type="text" name="githun" placeholder="Please Enter the Github name"[(ngModel)]="githubusername"><br><br>
         <button type="submit" class="btn" (click)="SearchName()">Search User</button><br>
     </div>
     
-    <div class="gitresult text-center">
+    <div class="gitresult">
         <blockquote>
             <ul>
-                <p><strong>
-                    {{userclass.username}}
-                </strong></p>
-                <img src="{{userclass.avatar_url}}">
-
-                <footer>
-                    <div class="row">
-                        <div class="col-md-6"><br>
-                            <div class="text-center">
-                                <h4><u>Followers:</u>{{userclass.followers}}</h4><br><br>
-                                <h4><u>Following:</u>{{userclass.following}}</h4><br><br>
-                                <h4><u>Number of Repository:</u>{{userclass.public_repos}}</h4><br><br>
-                            </div>    
-                        </div>
-
+                <br>
+                <div class="lesspart">
+                    <p class="username"><strong>
+                        User name: {{userclass.username}}
+                    </strong></p>
+                    <img src="{{userclass.avatar_url}}">
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-6 morep"><br>
                         <div>
-                            <h4><strong>List of Public Repositories</strong> </h4>
-                            <table class="table">
+                            <h4><u>Followers:</u>{{userclass.followers}}</h4><br><br>
+                            <h4><u>Following:</u>{{userclass.following}}</h4><br><br>
+                            <h4><u>Number of Repository:</u>{{userclass.public_repos}}</h4><br><br>
+                        </div>    
+                    </div>
+
+                    <div class="listrepo text-center">
+                        <h4><strong>List of Public Repositories</strong> </h4>
+                        <table class="table">
                                 <tbody>
                                   <tr *ngFor="let reposi of repo">
                                     <td>
                                       <a href="{{reposi.html_url}}">{{reposi.name}}</a><br>
                                       <p>Description: {{reposi.description}}</p><br>
+                                      <p>Date: {{reposi.created_at|date}}</p>
+                                      <p>created in {{reposi.created_at|dateCount}} days</p>
                                     </td>
                                   </tr>
                                 </tbody>
                             </table>
                         </div>
                     </div>
-                </footer>
             </ul>
         </blockquote>
     </div>

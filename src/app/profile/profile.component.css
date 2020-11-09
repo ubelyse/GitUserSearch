@@ -13,3 +13,14 @@
     background-color: darkred;
     color: white;
 }
+.lesspart{
+    float: left;
+}
+
+.morep{
+    float: left;
+}
+
+.listrepo{
+   float: right;
+}
