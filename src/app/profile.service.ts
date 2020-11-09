@@ -13,7 +13,7 @@ export class ProfileService {
 
   constructor(private http:HttpClient) {
     
-    this.userclass=new Userclass('','',0,0,0,'', new Date())
+    this.userclass=new Userclass('','',0,0,0,'')
     this.repo= []
    }
 
@@ -28,7 +28,6 @@ export class ProfileService {
       following:number;
       public_repos:number;
       html_url:string;
-    
     }
 
     let promise =new Promise((resolve,reject)=>{
@@ -71,7 +70,7 @@ repositoryrequest(userInput){
     this.http.get<ApiRepo>('https://api.github.com/users/'+githubusername+'/repos?access_token='+ environment.apikey).toPromise().then(response=>{
         for (var i in response){
           console.log(i)
-          this.repo.push(new Repo(response[i].name,response[i].description,response[i].created_at))
+          this.repo.push(new Repo(response[i].name,response[i].description, response[i].created_at))
         }
 
         resolve()

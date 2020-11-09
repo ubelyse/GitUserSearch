@@ -10,6 +10,7 @@ import { NavbarComponent } from './navbar/navbar/navbar.component';
 import { AboutComponent } from './about/about/about.component';
 import { FormsModule } from '@angular/forms';
 import { HighlightDirective } from './highlight.directive';
+import { TimecountPipe } from './timecount.pipe';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { HighlightDirective } from './highlight.directive';
     ProfileComponent,
     NavbarComponent,
     AboutComponent,
-    HighlightDirective
+    HighlightDirective,
+    TimecountPipe
   ],
   imports: [
     BrowserModule,
