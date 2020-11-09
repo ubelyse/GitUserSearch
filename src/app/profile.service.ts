@@ -16,28 +16,29 @@ export class ProfileService {
     this.userclass=new Userclass('','',0,0,0,'')
     this.repo= []
    }
+
    profileRequest(userInput){
   
-    var username=userInput;
+    var githubusername=userInput;
     
     interface ApiResponse{
       name:string;
       avatar_url:string;
       followers:number;
       following:number;
-      repo:number;
-      repo_url:string;
+      public_repos:number;
+      html_url:string;
     }
 
     let promise =new Promise((resolve,reject)=>{
-      this.http.get<ApiResponse>('https://api.github.com/users/' + username+'?access_token='+ environment.apikey).toPromise().then(response=>{
+      this.http.get<ApiResponse>('https://api.github.com/users/' + githubusername+'?access_token='+ environment.apikey).toPromise().then(response=>{
           
           this.userclass.username=response.name
           this.userclass.avatar_url=response.avatar_url
           this.userclass.followers=response.followers
           this.userclass.following=response.following
-          this.userclass.repo=response.repo
-          this.userclass.repo_url=response.repo_url
+          this.userclass.public_repos=response.public_repos
+          this.userclass.html_url=response.html_url
          
         
           resolve()
@@ -57,22 +58,21 @@ export class ProfileService {
 
 repositoryrequest(userInput){
   
-  var userName=userInput;
+  var githubusername=userInput;
   
   interface ApiRepo{
     name:string;
     description:string;
     
-    
-   
   }
 
   let promises =new Promise((resolve,reject)=>{
-    this.http.get<ApiRepo>('https://api.github.com/users/'+userName+'/repos?access_token='+ environment.apikey).toPromise().then(response=>{
+    this.http.get<ApiRepo>('https://api.github.com/users/'+githubusername+'/repos?access_token='+ environment.apikey).toPromise().then(response=>{
         for (var i in response){
           console.log(i)
           this.repo.push(new Repo(response[i].name,response[i].description))
         }
+
         resolve()
     },
     error=>{

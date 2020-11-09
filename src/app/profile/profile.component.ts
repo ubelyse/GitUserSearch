@@ -15,18 +15,18 @@ export class ProfileComponent implements OnInit {
   userclass:Userclass;
   repo:Repo[];
 
-  userName=""
+  githubusername="";
 
   constructor (private profileservice:ProfileService,private router:Router) {}
 
   SearchName(){
-    this.profileservice.profileRequest(this.userName)
-    this.profileservice.repositoryrequest(this.userName)
+    this.profileservice.profileRequest(this.githubusername)
+    this.profileservice.repositoryrequest(this.githubusername)
   }
 
   ngOnInit(){
     this.profileservice.profileRequest('ubelyse');
-    this.profileservice.repositoryrequest('ubelyse')
+    this.profileservice.repositoryrequest('ubelyse');
          
     this.userclass=this.profileservice.userclass
     this.repo=this.profileservice.repo
