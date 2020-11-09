@@ -9,7 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NavbarComponent } from './navbar/navbar/navbar.component';
 import { AboutComponent } from './about/about/about.component';
 import { FormsModule } from '@angular/forms';
-import { DateCountPipe } from './date-count.pipe';
+import { HighlightDirective } from './highlight.directive';
 
 @NgModule({
   declarations: [
@@ -17,7 +17,7 @@ import { DateCountPipe } from './date-count.pipe';
     ProfileComponent,
     NavbarComponent,
     AboutComponent,
-    DateCountPipe
+    HighlightDirective
   ],
   imports: [
     BrowserModule,

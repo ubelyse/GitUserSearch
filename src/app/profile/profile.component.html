@@ -12,21 +12,20 @@
             <ul>
                 <br>
                 <div class="lesspart">
-                    <p class="username"><strong>
-                        User name: {{userclass.username}}
-                    </strong></p>
-                    <img src="{{userclass.avatar_url}}">
+                    <div>
+                        <p appHighlight class="username"><strong>
+                            User name: {{userclass.username}}
+                        </strong></p>
+                        <img src="{{userclass.avatar_url}}">
+                    </div>
+                    <div class="text-center">
+                        <h4><u>Followers:</u>{{userclass.followers}}</h4><br><br>
+                        <h4><u>Following:</u>{{userclass.following}}</h4><br><br>
+                        <h4><u>Number of Repository:</u>{{userclass.public_repos}}</h4><br><br>
+                    </div>   
                 </div>
                 
                 <div class="row">
-                    <div class="col-md-6 morep"><br>
-                        <div>
-                            <h4><u>Followers:</u>{{userclass.followers}}</h4><br><br>
-                            <h4><u>Following:</u>{{userclass.following}}</h4><br><br>
-                            <h4><u>Number of Repository:</u>{{userclass.public_repos}}</h4><br><br>
-                        </div>    
-                    </div>
-
                     <div class="listrepo text-center">
                         <h4><strong>List of Public Repositories</strong> </h4>
                         <table class="table">
@@ -36,7 +35,7 @@
                                       <a href="{{reposi.html_url}}">{{reposi.name}}</a><br>
                                       <p>Description: {{reposi.description}}</p><br>
                                       <p>Date: {{reposi.created_at|date}}</p>
-                                      <p>created in {{reposi.created_at|dateCount}} days</p>
+                                      <p>Repository created in {{reposi.created_at|dateCount}} days</p>
                                     </td>
                                   </tr>
                                 </tbody>
