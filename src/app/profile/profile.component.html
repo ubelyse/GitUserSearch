@@ -1,13 +1,13 @@
 <div class="container text-center">
     
-    <div class="form-group">
+    <div class="gitform form-group">
         <br>
-        <label for="username">Enter the Github name</label><br>
-        <input type="text" name="githun" placeholder="Enter the Github name"[(ngModel)]="githubusername"><br><br>
-        <button type="submit" class="btn btn-success" (click)="SearchName()">Search User</button>
+        <label for="username">Enter the Github Username</label><br>
+        <input type="text" name="githun" placeholder="Please Enter the Github name"[(ngModel)]="githubusername"><br><br>
+        <button type="submit" class="btn" (click)="SearchName()">Search User</button><br>
     </div>
     
-    <div class="text-center">
+    <div class="gitresult text-center">
         <blockquote>
             <ul>
                 <p><strong>
@@ -27,11 +27,16 @@
 
                         <div>
                             <h4><strong>List of Public Repositories</strong> </h4>
-                            <div class="col-md-6">
-                                <ul>
-                                  <li *ngFor="let repository of repo">{{repository.name}} <br>{{repository.description}} <br><br></li>
-                              </ul>
-                              </div>
+                            <table class="table">
+                                <tbody>
+                                  <tr *ngFor="let reposi of repo">
+                                    <td>
+                                      <a href="{{reposi.html_url}}">{{reposi.name}}</a><br>
+                                      <p>Description: {{reposi.description}}</p><br>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </footer>
